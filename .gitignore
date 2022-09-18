@@ -1,0 +1,19 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/src/.vs/EstoqueLab/FileContentIndex
+/src/EstoqueLab.Api/bin/Debug/net6.0
+/src/EstoqueLab.Api/obj
+/src/EstoqueLab.Application/bin/Debug/net6.0
+/src/EstoqueLab.Application/obj
+/src/EstoqueLab.Data/bin/Debug/net6.0
+/src/EstoqueLab.Data/obj
+/src/EstoqueLab.Domain/bin/Debug/net6.0
+/src/EstoqueLab.Domain/obj
+/src/EstoqueLab.UI/bin/Debug/net6.0
+/src/EstoqueLab.UI/obj
+/src/EstoqueLab.Uteis/bin/Debug/net6.0
+/src/EstoqueLab.Uteis/obj
+/src/.vs
