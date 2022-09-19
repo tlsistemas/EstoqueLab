@@ -1,8 +1,17 @@
-﻿using System.Data;
+﻿using Microsoft.IdentityModel.Tokens;
+using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.Globalization;
+using System.IdentityModel.Tokens.Jwt;
+using System.IO;
+using System.Linq;
 using System.Net;
 using System.Reflection;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -631,6 +640,7 @@ namespace EstoqueLab.Uteis
             Int32 n;
             return Int32.TryParse(value, out n);
         }
+
         public static String[] SeparateName(this String name)
         {
             var vector = name.Split(" ").ToList();

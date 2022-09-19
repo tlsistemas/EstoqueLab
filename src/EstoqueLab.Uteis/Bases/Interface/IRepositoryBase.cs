@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Common;
-using System.Linq;
+﻿using System.Data.Common;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EstoqueLab.Uteis.Bases.Interface
 {
@@ -27,12 +22,6 @@ namespace EstoqueLab.Uteis.Bases.Interface
             String orderBy = null,
             String includeProps = null,
             bool asNoTracking = true);
-
-        Task<List<T>> RawSqlQueryAsync<T>(string query, Func<DbDataReader, T> map);
-
-        Task<int> RawSqlQueryAsync(string query);
-
-        Task BulkInsert(List<TEntity> objs);
     }
 
 }

@@ -1,6 +1,11 @@
 ﻿using EstoqueLab.Uteis.Bases.Interface;
+using System;
+using System.Collections.Generic;
 using System.Data.Common;
+using System.Linq;
 using System.Linq.Expressions;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace EstoqueLab.Uteis.Bases
 {
@@ -77,21 +82,6 @@ namespace EstoqueLab.Uteis.Bases
         public virtual async Task UpdateAsync(TEntity entity)
         {
             await repositoryBase.UpdateAsync(entity);
-        }
-
-        public virtual Task<List<T>> RawSqlQueryAsync<T>(string query, Func<DbDataReader, T> map)
-        {
-            return repositoryBase.RawSqlQueryAsync<T>(query, map);
-        }
-
-        public virtual async Task<int> RawSqlQueryAsync(string query)
-        {
-            return await repositoryBase.RawSqlQueryAsync(query);
-        }
-
-        public Task BulkInsert(List<TEntity> objs)
-        {
-            return repositoryBase.BulkInsert(objs);
         }
     }
 

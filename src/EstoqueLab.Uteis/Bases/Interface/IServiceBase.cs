@@ -27,12 +27,6 @@ namespace EstoqueLab.Uteis.Bases.Interface
     String orderBy = null,
     String includeProps = null,
     bool asNoTracking = true);
-
-        Task<List<T>> RawSqlQueryAsync<T>(string query, Func<DbDataReader, T> map);
-
-        Task<int> RawSqlQueryAsync(string query);
-
-        public Task BulkInsert(List<TEntity> objs);
     }
 
 }

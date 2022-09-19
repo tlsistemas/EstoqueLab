@@ -1,10 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EstoqueLab.Uteis.Bases
 {
@@ -20,7 +15,7 @@ namespace EstoqueLab.Uteis.Bases
                 .HasColumnName("Id");
             builder.Property(c => c.Ativo)
                 .IsRequired()
-                .HasColumnName("Ativo").HasDefaultValue(true);
+                .HasColumnName("Ativo").HasDefaultValue(false);
 
             builder.Property(c => c.CriadoEm)
                 .IsRequired()

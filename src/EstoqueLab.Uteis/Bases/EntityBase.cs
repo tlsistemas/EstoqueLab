@@ -1,5 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace EstoqueLab.Uteis.Bases
 {
@@ -33,8 +38,6 @@ namespace EstoqueLab.Uteis.Bases
         public DateTime CriadoEm { get; set; }
         public DateTime AtualizadoEm { get; set; }
         [NotMapped]
-        public int RowNum { get; set; }
-        [NotMapped]
-        public int RowSum { get; set; }
+        public int NumeroLinhas { get; set; }
     }
 }

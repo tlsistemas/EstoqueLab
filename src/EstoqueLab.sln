@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EstoqueLab.UI", "EstoqueLab.UI\EstoqueLab.UI.csproj", "{BEDA0B06-88DC-4893-BD90-ABC7A8468BEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EstoqueLab.UI", "EstoqueLab.UI\EstoqueLab.UI.csproj", "{BEDA0B06-88DC-4893-BD90-ABC7A8468BEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EstoqueLab.Api", "EstoqueLab.Api\EstoqueLab.Api.csproj", "{44A84CCE-D369-4287-B8D2-92CAA98872DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EstoqueLab.Api", "EstoqueLab.Api\EstoqueLab.Api.csproj", "{44A84CCE-D369-4287-B8D2-92CAA98872DF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - UI", "1 - UI", "{8EA78B84-95E2-4743-8A5E-7DA37FF1D12A}"
 EndProject
@@ -21,13 +21,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.1 - Data", "5.1 - Data", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.2 - Utils", "5.2 - Utils", "{8ED8D6C7-B2BB-4AAC-B6D0-2351EB6F65CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EstoqueLab.Application", "EstoqueLab.Application\EstoqueLab.Application.csproj", "{A55657DD-2E04-406A-B44B-4CDF0D3E6036}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EstoqueLab.Application", "EstoqueLab.Application\EstoqueLab.Application.csproj", "{A55657DD-2E04-406A-B44B-4CDF0D3E6036}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EstoqueLab.Domain", "EstoqueLab.Domain\EstoqueLab.Domain.csproj", "{49693825-411C-4209-A0CC-98FCBEC6EA9D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EstoqueLab.Domain", "EstoqueLab.Domain\EstoqueLab.Domain.csproj", "{49693825-411C-4209-A0CC-98FCBEC6EA9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EstoqueLab.Data", "EstoqueLab.Data\EstoqueLab.Data.csproj", "{14D25EED-CCC3-4F6A-ADE6-68F189A84EFA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EstoqueLab.Data", "EstoqueLab.Data\EstoqueLab.Data.csproj", "{14D25EED-CCC3-4F6A-ADE6-68F189A84EFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EstoqueLab.Uteis", "EstoqueLab.Uteis\EstoqueLab.Uteis.csproj", "{2C5A4E42-25B3-49FA-996E-048E334955FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EstoqueLab.Uteis", "EstoqueLab.Uteis\EstoqueLab.Uteis.csproj", "{2C5A4E42-25B3-49FA-996E-048E334955FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

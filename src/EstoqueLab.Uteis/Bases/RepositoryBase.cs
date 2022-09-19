@@ -1,7 +1,12 @@
 ﻿using EstoqueLab.Uteis.Bases.Interface;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Linq.Dynamic.Core;
+using System.Text;
+using System.Threading.Tasks;
 using System.Data.Common;
 using System.Data;
 
@@ -152,42 +157,6 @@ bool asNoTracking = true)
         private async Task SaveChangesAsync()
         {
             await context.SaveChangesAsync();
-        }
-
-        public virtual async Task<List<T>> RawSqlQueryAsync<T>(string query, Func<DbDataReader, T> map)
-        {
-            var _context = context;
-            var command = _context.Database.GetDbConnection().CreateCommand();
-
-            command.CommandText = query;
-            command.CommandType = CommandType.Text;
-
-            _context.Database.OpenConnection();
-
-            using (var result = await command.ExecuteReaderAsync())
-            {
-                var entities = new List<T>();
-
-                while (result.Read())
-                {
-                    entities.Add(map(result));
-                }
-
-                return entities;
-            }
-
-
-        }
-
-
-        public virtual async Task<int> RawSqlQueryAsync(string query)
-        {
-            return await context.Database.ExecuteSqlRawAsync(query);
-        }
-
-        public Task BulkInsert(List<TEntity> objs)
-        {
-            return context.BulkInsertAsync(objs, options => options.BatchSize = 100);
         }
     }
 }
