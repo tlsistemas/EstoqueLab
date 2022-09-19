@@ -24,7 +24,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EstoqueLab.Application\EstoqueLab.Application.csproj" />
     <ProjectReference Include="..\EstoqueLab.Domain\EstoqueLab.Domain.csproj" />
   </ItemGroup>
 
