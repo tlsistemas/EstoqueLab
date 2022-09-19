@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace C2P.Data.Contexts
+namespace EstoqueLab.Data.Contexts
 {
     public class LabContext : DbContext
     {
