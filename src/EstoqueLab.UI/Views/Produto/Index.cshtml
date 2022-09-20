@@ -14,7 +14,20 @@
 <a class="btn btn-sm btn-dark justify-content-end" style="float:right; margin:5px;" href="/Produto/Create" role="button">
     <i class="fas fa-plus-circle"></i> Cadastrar Produto
 </a>
-
+<div class="row">
+    @if (@TempData["sucesso_produto_lista"] != null)
+    {
+        <span style="color:green; text-align:center;">
+            <strong>Sucesso!</strong> @TempData["sucesso_produto_lista"]
+        </span>
+    }
+    @if (@TempData["erro_produto_lista"] != null)
+    {
+        <span style="color:red; text-align:center;">
+            <strong>Error!</strong> @TempData["erro_produto_lista"]
+        </span>
+    }
+</div>
 <table class="table">
     <thead>
         <tr>
@@ -62,13 +75,13 @@
                     @Html.DisplayFor(modelItem => item.AtualizadoEm)
                 </td>
                 <td>
-                    <a class="btn btn-sm btn-danger justify-content-end" style="float:right; margin:5px;" href="/Produto/Delete" role="button">
+                    <a class="btn btn-sm btn-danger justify-content-end" style="float:right; margin:5px;" href="/Produto/Delete?Key=@(item.Key)" role="button">
                         <i class="fa-solid fa-trash"></i> Excluir
                     </a>
-                    <a class="btn btn-sm btn-secondary justify-content-end" style="float:right; margin:5px;" href="/Produto/Edit" role="button">
+                    <a class="btn btn-sm btn-secondary justify-content-end" style="float:right; margin:5px;" href="/Produto/Edit?Key=@(item.Key)" role="button">
                         <i class="fa-solid fa-pen-to-square"></i> Editar
                     </a>
-                    <a class="btn btn-sm btn-light justify-content-end" style="float:right; margin:5px;" href="/Produto/Details" role="button">
+                    <a class="btn btn-sm btn-light justify-content-end" style="float:right; margin:5px;" href="/Produto/Details?Key=@(item.Key)" role="button">
                         <i class="fa-solid fa-circle-info"></i> Detalhes
                     </a>
                 </td>

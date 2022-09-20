@@ -1,0 +1,41 @@
+﻿@model EstoqueLab.UI.Models.Produto
+
+@{
+    ViewData["Title"] = "Detalhes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Detalhes da Categoria</h1>
+<a class="btn btn-sm btn-dark justify-content-end" style="float:right; margin:5px;" href="/Produto" role="button">
+    <i class="fa-solid fa-list-check"></i> Produto
+</a>
+
+
+<table id="tabela" class="table table-bordered table-striped" style="font-size: small;">
+    <tbody>
+        <tr>
+            <th scope="row">Nome</th>
+            <td>@Model.Nome</td>
+        </tr>
+        <tr>
+            <th scope="row">Valor</th>
+            <td>@Model.Valor</td>
+        </tr>
+        <tr>
+            <th scope="row">Categoria</th>
+            <td>@Model.Categoria.Nome</td>
+        </tr>
+        <tr>
+            <th scope="row">Ativo</th>
+            <td>@Model.Ativo</td>
+        </tr>
+        <tr>
+            <th scope="row">Data Criação</th>
+            <td>@Model.CriadoEm</td>
+        </tr>
+        <tr>
+            <th scope="row">Data Atualização</th>
+            <td>@Model.AtualizadoEm</td>
+        </tr>
+</table>
+

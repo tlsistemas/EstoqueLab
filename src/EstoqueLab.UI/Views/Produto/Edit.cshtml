@@ -1,18 +1,19 @@
 ﻿@model EstoqueLab.UI.Models.Produto
 
 @{
-    ViewData["Title"] = "Criação";
+    ViewData["Title"] = "Atualização";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Cadastrar Produto</h1>
+<h1>Atualizar Produto</h1>
 <a class="btn btn-sm btn-dark justify-content-end" style="float:right; margin:5px;" href="/Produto" role="button">
-    <i class="fa-solid fa-list-check"></i> Produtos
+    <i class="fa-solid fa-list-check"></i> Produto
 </a>
 
 <div class="row" style="padding-top: 50px;">
-    @using (Html.BeginForm("Create", "Produto", FormMethod.Post, new { enctype = "multpart/form-data", @role = "form" }))
+    @using (Html.BeginForm("Edit", "Produto", FormMethod.Post, new { enctype = "multpart/form-data", @role = "form" }))
     {
+        @Html.HiddenFor(model => model.Key)
         <div class="row justify-content-between text-left">
             <div class="form-group flex-column d-flex">
                 <label class="form-control-label">Nome<span class="text-danger"> *</span></label>
@@ -34,6 +35,7 @@
                 <i class="fa-solid fa-floppy-disk"></i> Salvar
             </button>
         </div>
+
     }
 </div>
 
