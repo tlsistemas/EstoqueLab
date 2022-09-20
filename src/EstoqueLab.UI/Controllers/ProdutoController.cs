@@ -23,7 +23,8 @@ namespace EstoqueLab.UI.Controllers
         {
             var model = new List<Produto>();
             var result = await _api.Get(Methods.Produto);
-            if (!ReferenceEquals(result.Data, null))
+            var param = "?Include=Categoria";
+            if (!ReferenceEquals(result.Data + param, null))
             {
                 model = JsonConvert.DeserializeObject<List<Produto>>(result.Data.ToString());
             }
@@ -42,8 +43,19 @@ namespace EstoqueLab.UI.Controllers
             return View(model);
         }
 
-        public ActionResult Create()
+        public async Task<ActionResult> CreateAsync()
         {
+            try
+            {
+                var responseConfig = await _api.Get(Methods.Categoria + "?Ativo=True");
+                ViewBag.lstCategorias = JsonConvert.DeserializeObject<List<Categoria>>(responseConfig.Data.ToString());
+
+            }
+            catch (Exception)
+            {
+                ViewBag.lstClientes = new List<Categoria>();
+            }
+
             return View();
         }
 
