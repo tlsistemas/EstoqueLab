@@ -7,8 +7,10 @@
 
 <h1>Categorias</h1>
 
-
-<a class="btn btn-sm btn-dark justify-content-end" style="float:right" href="/Categoria/Create" role="button">
+<a class="btn btn-sm btn-dark justify-content-end" style="float:right; margin:5px;" href="/Produto" role="button">
+    <i class="fa-solid fa-list-check"></i> Produtos
+</a>
+<a class="btn btn-sm btn-dark justify-content-end" style="float:right; margin:5px;" href="/Categoria/Create" role="button">
     <i class="fas fa-plus-circle"></i> Cadastrar Categoria
 </a>
 
@@ -47,9 +49,15 @@
                     @Html.DisplayFor(modelItem => item.AtualizadoEm)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    <a class="btn btn-sm btn-danger justify-content-end" style="float:right; margin:5px;" href="/Categoria/Delete" role="button">
+                        <i class="fa-solid fa-trash"></i> Excluir
+                    </a>
+                    <a class="btn btn-sm btn-secondary justify-content-end" style="float:right; margin:5px;" href="/Categoria/Edit" role="button">
+                        <i class="fa-solid fa-pen-to-square"></i> Editar
+                    </a>
+                    <a class="btn btn-sm btn-light justify-content-end" style="float:right; margin:5px;" href="/Categoria/Details" role="button">
+                        <i class="fa-solid fa-circle-info"></i> Detalhes
+                    </a> 
                 </td>
             </tr>
         }

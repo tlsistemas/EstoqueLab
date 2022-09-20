@@ -7,8 +7,8 @@ namespace EstoqueLab.Application.Parameters
 {
     public class CategoriaParams : BaseParams<Categoria>
     {
-        public string Key { get; set; }
-        public string Nome { get; set; }
+        public string Key { get; set; } = "";
+        public string Nome { get; set; } = "";
 
         public override Expression<Func<Categoria, bool>> Filter()
         {
