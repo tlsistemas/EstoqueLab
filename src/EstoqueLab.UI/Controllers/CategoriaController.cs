@@ -14,7 +14,7 @@ namespace EstoqueLab.UI.Controllers
         private readonly IApiService _api;
         private readonly ILogger<CategoriaController> _logger;
 
-        public CategoriaController(IApiService api, 
+        public CategoriaController(IApiService api,
             ILogger<CategoriaController> logger)
         {
             _api = api;
@@ -25,7 +25,7 @@ namespace EstoqueLab.UI.Controllers
         {
             var model = new List<Categoria>();
             var result = await _api.Get(Methods.Categoria);
-            if(!ReferenceEquals(result.Data, null))
+            if (!ReferenceEquals(result.Data, null))
             {
                 model = JsonConvert.DeserializeObject<List<Categoria>>(result.Data.ToString());
             }
@@ -41,7 +41,7 @@ namespace EstoqueLab.UI.Controllers
             {
                 model = JsonConvert.DeserializeObject<List<Categoria>>(result.Data.ToString());
             }
-            return View(model);
+            return View(model.FirstOrDefault());
         }
 
         public ActionResult Create()
@@ -66,7 +66,7 @@ namespace EstoqueLab.UI.Controllers
                 {
                     TempData["erro_categoria_lista"] = "Categoria não cadastrada!";
                     return RedirectToAction("Index", "Categoria");
-                }                
+                }
             }
             catch
             {
@@ -77,14 +77,23 @@ namespace EstoqueLab.UI.Controllers
 
         public async Task<ActionResult> EditAsync(string key)
         {
-            var model = new List<Categoria>();
-            var param = "?Key=" + key;
-            var result = await _api.Get(Methods.Categoria + param);
-            if (!ReferenceEquals(result.Data, null))
+            try
             {
-                model = JsonConvert.DeserializeObject<List<Categoria>>(result.Data.ToString());
+                var model = new List<Categoria>();
+                var param = "?Key=" + key;
+                var result = await _api.Get(Methods.Categoria + param);
+                if (!ReferenceEquals(result.Data, null))
+                {
+                    model = JsonConvert.DeserializeObject<List<Categoria>>(result.Data.ToString());
+                }
+                return View(model.FirstOrDefault());
             }
-            return View(model);
+            catch (Exception ex)
+            {
+                TempData["erro_categoria_lista"] = "Categoria não cadastrada!";
+                return RedirectToAction("Index", "Categoria");
+            }
+
         }
 
         [HttpPost]
@@ -113,23 +122,26 @@ namespace EstoqueLab.UI.Controllers
             }
         }
 
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public async Task<ActionResult> DeleteAsync(string key)
         {
             try
             {
-                return RedirectToAction(nameof(IndexAsync));
+                var param = "?Key=" + key;
+                var result = await _api.Delete(Methods.Categoria + param);
+                if (!ReferenceEquals(result.Data, null))
+                {
+                    TempData["sucesso_categoria_lista"] = "Categoria excluida com sucesso!";                    
+                }
+                else
+                {
+                    TempData["erro_categoria_lista"] = "Categoria não excluida!";
+                }
             }
-            catch
+            catch (Exception)
             {
-                return View();
+                TempData["erro_categoria_lista"] = "Categoria não excluida!";
             }
+            return RedirectToAction("Index", "Categoria");
         }
     }
 }

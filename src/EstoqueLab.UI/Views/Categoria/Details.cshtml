@@ -1,0 +1,33 @@
+﻿@model EstoqueLab.UI.Models.Categoria
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Detalhes da Categoria</h1>
+<a class="btn btn-sm btn-dark justify-content-end" style="float:right; margin:5px;" href="/Categoria" role="button">
+    <i class="fa-solid fa-list-check"></i> Categorias
+</a>
+
+
+<table id="tabela" class="table table-bordered table-striped" style="font-size: small;">
+    <tbody>
+        <tr>
+            <th scope="row">Nome</th>
+            <td>@Model.Nome</td>
+        </tr>
+        <tr>
+            <th scope="row">Ativo</th>
+            <td>@Model.Ativo</td>
+        </tr>
+        <tr>
+            <th scope="row">Data Criação</th>
+            <td>@Model.CriadoEm</td>
+        </tr>
+        <tr>
+            <th scope="row">Data Atualização</th>
+            <td>@Model.AtualizadoEm</td>
+        </tr>
+</table>
+

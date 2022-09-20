@@ -22,9 +22,9 @@ namespace EstoqueLab.UI.Controllers
         public async Task<ActionResult> IndexAsync()
         {
             var model = new List<Produto>();
-            var result = await _api.Get(Methods.Produto);
             var param = "?Include=Categoria";
-            if (!ReferenceEquals(result.Data + param, null))
+            var result = await _api.Get(Methods.Produto + param);
+            if (!ReferenceEquals(result.Data, null))
             {
                 model = JsonConvert.DeserializeObject<List<Produto>>(result.Data.ToString());
             }

@@ -13,7 +13,20 @@
 <a class="btn btn-sm btn-dark justify-content-end" style="float:right; margin:5px;" href="/Categoria/Create" role="button">
     <i class="fas fa-plus-circle"></i> Cadastrar Categoria
 </a>
-
+<div class="row">
+    @if (@TempData["sucesso_categoria_lista"] != null)
+    {
+        <span style="color:green; text-align:center;">
+            <strong>Sucesso!</strong> @TempData["sucesso_categoria_lista"]
+        </span>
+    }
+    @if (@TempData["erro_categoria_lista"] != null)
+    {
+        <span style="color:red; text-align:center;">
+            <strong>Error!</strong> @TempData["erro_categoria_lista"]
+        </span>
+    }
+</div>
 <table class="table">
     <thead>
         <tr>
@@ -49,13 +62,13 @@
                     @Html.DisplayFor(modelItem => item.AtualizadoEm)
                 </td>
                 <td>
-                    <a class="btn btn-sm btn-danger justify-content-end" style="float:right; margin:5px;" href="/Categoria/Delete" role="button">
+                    <a class="btn btn-sm btn-danger justify-content-end" style="float:right; margin:5px;" href="/Categoria/Delete?Key=@(item.Key)" role="button">
                         <i class="fa-solid fa-trash"></i> Excluir
                     </a>
-                    <a class="btn btn-sm btn-secondary justify-content-end" style="float:right; margin:5px;" href="/Categoria/Edit" role="button">
+                    <a class="btn btn-sm btn-secondary justify-content-end" style="float:right; margin:5px;" href="/Categoria/Edit?Key=@(item.Key)" role="button">
                         <i class="fa-solid fa-pen-to-square"></i> Editar
                     </a>
-                    <a class="btn btn-sm btn-light justify-content-end" style="float:right; margin:5px;" href="/Categoria/Details" role="button">
+                    <a class="btn btn-sm btn-light justify-content-end" style="float:right; margin:5px;" href="/Categoria/Details?Key=@(item.Key)" role="button">
                         <i class="fa-solid fa-circle-info"></i> Detalhes
                     </a> 
                 </td>

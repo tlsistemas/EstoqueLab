@@ -1,0 +1,31 @@
+﻿@model EstoqueLab.UI.Models.Categoria
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Cadastrar Categoria</h1>
+<a class="btn btn-sm btn-dark justify-content-end" style="float:right; margin:5px;" href="/Categoria" role="button">
+    <i class="fa-solid fa-list-check"></i> Categorias
+</a>
+
+<div class="row" style="padding-top: 50px;">
+    @using (Html.BeginForm("Edit", "Categoria", FormMethod.Post, new { enctype = "multpart/form-data", @role = "form" }))
+    {
+        @Html.HiddenFor(model => model.Key)
+        <div class="row justify-content-between text-left">
+            <div class="form-group col-sm-6 flex-column d-flex">
+                <label class="form-control-label">Nome<span class="text-danger"> *</span></label>
+                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control", id = "nome", @required = "required", placeholder = "Nome" } })
+            </div>
+        </div>
+        <div style="margin-top:30px;">
+            <button type="submit" class="submit-btn btn-block btn-success">
+                <i class="fa-solid fa-floppy-disk"></i> Salvar
+            </button>
+        </div>
+
+    }
+</div>
+
