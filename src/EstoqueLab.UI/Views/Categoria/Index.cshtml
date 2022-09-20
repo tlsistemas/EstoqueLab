@@ -1,0 +1,57 @@
+﻿@model IEnumerable<EstoqueLab.UI.Models.Categoria>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Categorias</h1>
+
+
+<a class="btn btn-sm btn-dark justify-content-end" style="float:right" href="/Categoria/Create" role="button">
+    <i class="fas fa-plus-circle"></i> Cadastrar Categoria
+</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nome
+            </th>
+            <th>
+                Ativo
+            </th>
+            <th>
+                Data Criação
+            </th>
+            <th>
+                Data Atualização
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ativo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CriadoEm)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AtualizadoEm)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
